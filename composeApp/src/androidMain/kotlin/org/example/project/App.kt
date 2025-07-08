@@ -18,6 +18,11 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 import test_dokka_documentation.composeapp.generated.resources.Res
 import test_dokka_documentation.composeapp.generated.resources.compose_multiplatform
 
+/**
+ * Fetches the initial bonus balance information and performs a sync check between
+ * remote data and locally persisted active bonus state.
+ * @param handleProgress If true, shows a full-screen loading indicator during the fetch.
+ */
 @Composable
 @Preview
 fun App() {
