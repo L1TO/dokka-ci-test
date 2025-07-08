@@ -1,0 +1,16 @@
+# .gitlab-ci.yml
+
+pages:
+  image: gradle:jdk17
+  script:
+    - echo "🚀 Generating documentation without configuration cache..."
+    # Add the --no-configuration-cache flag to your build command
+    - ./gradlew dokkaHtml --no-configuration-cache
+
+    - echo "📦 Preparing files for publication..."
+    - mv build/dokka/html public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
